@@ -1,0 +1,31 @@
+<Basic_Idea>
+
+from random import choice
+print()
+variable_to_check_against = ""
+playlist = []
+
+print("Please enter your list of Songs: ")
+
+while (variable_to_check_against == ""):
+	given_input = input(">>> ")
+	given_input = given_input.title()
+	playlist.append(given_input)
+
+	if (given_input.title() == "Quit"):
+		variable_to_check_against = " "
+		playlist.remove("Quit")
+
+print()
+print("Please choose the first song to be played: ")
+for song in playlist:
+	print(song)
+
+first_song = input(">>> ")
+first_song = first_song.title()
+playlist.remove(first_song)
+print()
+print("Now Playing: {0}".format(first_song), 
+      "Next up: {0}".format(choice(playlist)), sep = "\n")
+
+
